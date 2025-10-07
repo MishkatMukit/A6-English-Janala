@@ -82,9 +82,9 @@
                     <!-- form content -->
                     <div id="hero-form" class="">
                         <form class="flex flex-col gap-3">
-                            <input id="name-input" class="py-3 input" value="mishkat" type="text"
+                            <input id="name-input" class="py-3 input"  type="text"
                                 placeholder="Enter Your Name">
-                            <input id="pass-input" class="input py-3" value="1234" type="password" name="" id=""
+                            <input id="pass-input" class="input py-3"  type="password" name="" id=""
                                 placeholder="Enter Password (1234)">
                             <div><button id="btn-start" class="btn bg-[#422AD5] text-white font-medium">Get
                                     Started</button></div>
@@ -95,17 +95,23 @@
                     <img src="assets/hero-student.png" alt="">
                 </div>
             </div>
-
+            <!-- Open the modal using ID.showModal() method -->
+                <!-- <button class="btn" onclick="word_details.showModal()">open modal</button> -->
+                <dialog id="word_details" class="modal">
+                    
+                </dialog>
         </section>
         <!-- learn section -->
         <section id="learn" class=" py-12 my-12 hidden">
             <h3 class="text-4xl font-bold text-center mb-8"><span class="text-[#00BCFF] ">Let's</span> Learn
                 Vocabularies</h3>
-            
+            <section id="lesson-loader" class="flex  justify-center p-5 hidden">
+                    <span class="loading loading-dots loading-xl"></span>
+                </section>    
             <!-- lesson wise learn -->
             <div id="lesson-container" class="flex flex-wrap justify-center items-center gap-4 my-8">
 
-
+                
                 <!-- <button
                     class=" btn btn-sm flex items-center gap-1 text-sm text-[#422AD5] border-2 font-semibold rounded-md py-1 px-4 border-[#422AD5]"><i
                         class="fa-solid fa-book-open"></i>Learn</button> -->
@@ -115,9 +121,9 @@
             <!-- words container -->
             <div class="container bg-[#f8F8f1] rounded-xl p-7">
                 <!-- loading -->
-            <section id="btn-loader" class="flex  justify-center p-5 hidden">
-                <span class="loading loading-dots loading-xl"></span>
-            </section>
+                <section id="btn-loader" class="flex  justify-center p-5 hidden">
+                    <span class="loading loading-dots loading-xl"></span>
+                </section>
                 <!-- words wrapper -->
                 <div id="words-container" class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
@@ -134,6 +140,7 @@
                     </div> -->
 
                 </div>
+
                 <!-- no vocabulary -->
                 <div id="no-vocabulary"
                     class="text-center space-y-2 flex flex-col items-center justify-center py-16 hidden">
@@ -163,21 +170,28 @@
             <div>
                 <div class="collapse collapse-plus bg-base-100 border border-base-300">
                     <input type="radio" name="my-accordion-3" checked="checked" />
-                    <div class="collapse-title font-semibold">How do I create an account?</div>
-                    <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow
-                        the registration process.</div>
+                    <div class="collapse-title font-semibold">1. How can I start learning English on this website?</div>
+                    <div class="collapse-content text-sm">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</div>
                 </div>
                 <div class="collapse collapse-plus bg-base-100 border border-base-300">
                     <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-                    <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the
-                        instructions sent to your email.</div>
+                    <div class="collapse-title font-semibold">2. Is this website free to use?</div>
+                    <div class="collapse-content text-sm">Yes, this website is completely free and made to help beginners to sharp their vocabulary.</div>
                 </div>
                 <div class="collapse collapse-plus bg-base-100 border border-base-300">
                     <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title font-semibold">How do I update my profile information?</div>
-                    <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make
-                        changes.</div>
+                    <div class="collapse-title font-semibold">3. Do I need to create an account?</div>
+                    <div class="collapse-content text-sm">For now you dont need to create account. just provide your name and start using.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+                    <div class="collapse-content text-sm">Finish the daily lessons and practise the vocabs in your everyday language.</div>
+                </div>
+                <div class="collapse collapse-plus bg-base-100 border border-base-300">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+                    <div class="collapse-content text-sm">For now we are not providing any certificates but we hope to provide certificate in future.</div>
                 </div>
             </div>
         </section>
