@@ -31,10 +31,12 @@
             max-width: 90%;
             margin: 0 auto;
         }
-        .active{
+
+        .active {
             background-color: #422AD5;
             color: white;
         }
+
         html {
             scroll-behavior: smooth;
         }
@@ -99,6 +101,7 @@
         <section id="learn" class=" py-12 my-12 hidden">
             <h3 class="text-4xl font-bold text-center mb-8"><span class="text-[#00BCFF] ">Let's</span> Learn
                 Vocabularies</h3>
+            
             <!-- lesson wise learn -->
             <div id="lesson-container" class="flex flex-wrap justify-center items-center gap-4 my-8">
 
@@ -111,6 +114,10 @@
             </div>
             <!-- words container -->
             <div class="container bg-[#f8F8f1] rounded-xl p-7">
+                <!-- loading -->
+            <section id="btn-loader" class="flex  justify-center p-5 hidden">
+                <span class="loading loading-dots loading-xl"></span>
+            </section>
                 <!-- words wrapper -->
                 <div id="words-container" class="grid grid-cols-1 md:grid-cols-3 gap-5">
 

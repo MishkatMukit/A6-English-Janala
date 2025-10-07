@@ -23,8 +23,10 @@ const showLessons = async (lessonID, btnID) =>{
     const activeButton = document.getElementById(`btn-${btnID}`)
     console.log(activeButton)
     activeButton.classList.add('active')
+    showWordsLoader()
     const response = await fetch(`https://openapi.programming-hero.com/api/level/${lessonID}`)
     const words = await response.json()
+    hideWordsLoader()
     displayLessons(words.data)
 
 }
