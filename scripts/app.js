@@ -9,8 +9,8 @@ const displayAllLevels = (levels) =>{
         const btnlevel = document.createElement('button')
         
         btnlevel.innerHTML=`
-            <button onclick="showLessons(${level.level_no})"
-                    class="btn hover:Active btn-sm flex items-center gap-1 text-sm text-[#422AD5] border-2 font-semibold rounded-md py-1 px-4 border-[#422AD5]"><i
+            <button id="btn-${level.id}" onclick="showLessons(${level.level_no},${level.id})"
+                    class="btn hover:bg-[#422AD5] hover:text-white btn-sm flex items-center gap-1 text-sm text-[#422AD5] border-2 font-semibold rounded-md py-1 px-4 border-[#422AD5]"><i
                         class="fa-solid fa-book-open"></i> Lesson -${level.level_no
 }</button>
         `
@@ -18,7 +18,11 @@ const displayAllLevels = (levels) =>{
     });
 }
 
-const showLessons = async (lessonID) =>{
+const showLessons = async (lessonID, btnID) =>{
+    removeActiveClass()
+    const activeButton = document.getElementById(`btn-${btnID}`)
+    console.log(activeButton)
+    activeButton.classList.add('active')
     const response = await fetch(`https://openapi.programming-hero.com/api/level/${lessonID}`)
     const words = await response.json()
     displayLessons(words.data)
@@ -35,7 +39,6 @@ const displayLessons = (words)=>{
         }
         document.getElementById('no-vocabulary').classList.add('hidden')
         words.forEach(word=> {
-        console.log(word)
         const wordCard = document.createElement('div')
         wordCard.innerHTML=`
                     <div class=" space-y-6 max-w-[500px] bg-white p-12 rounded-xl text-center">
